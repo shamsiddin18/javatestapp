@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Welcome to admin page</h1>
+
+<h3>Students test results</h3>
+
+  <h2>Choose your subject</h2>
+  <table>
+      <tr th:each="us:${users}">
+          <td th:text="${us.id}"></td>
+          <td th:text="${us.user_id}"></td>
+<!--          <td th:text="${us.total_core}"></td>-->
+          <td>
+<!--              <a th:href="@{'/subject/view/'+${subject.id}}" th:text="${subject.title}"></a>-->
+          </td>
+      </tr>
+  </table>
+
+
+  <a href="/creating">Adding question</a>
+
+
+</body>
+</html>

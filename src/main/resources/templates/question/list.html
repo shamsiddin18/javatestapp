@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+</head>
+<body>
+<form  action="/testing" method="post" >
+
+    <h1>Hello</h1>
+    <table>
+        <tr th:each="question,iter:${questions}">
+            <td th:text="|${iter.index + 1}. ${question.text}|"></td>
+            <td>
+                <a th:href="|/question/${question.id}/edit|">edit</a>
+            </td>
+
+
+                <table>
+                    <tr th:each="answer,iter:${answers.get(question.id)}">
+                        <input type="radio" th:attr="name=${question.id}" th:value="${answer.id}">
+                        <label th:text="${answer.text}"></label><br>
+                    </tr>
+                </table>
+
+        </tr>
+
+        <tr>
+            <td >
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+    <a href="/question/create">Adding question</a>
+    <a href="/answer/create">Adding answer</a>
+</form>
+</body>
+</html>

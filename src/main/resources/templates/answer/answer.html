@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form>
+
+     <h1>Correct Answer!</h1>
+     <table>
+
+         <tr th:each="answer:${answers}">
+
+             <td th:value="${answer.id}"></td>
+<!--             <td th:id="${answer.question_id}"></td>-->
+             <td th:text="${answer.text"></td>
+<!--             <td th:value="${answer.subject}"></td>-->
+
+
+             <td>
+                 <!--                <a th:href="@{'/subject/view/'+${subject.id}}" th:text="${subject.title}"></a>-->
+             </td>
+         </tr>
+     </table>
+
+
+ </form>
+
+
+
+</body>
+</html>

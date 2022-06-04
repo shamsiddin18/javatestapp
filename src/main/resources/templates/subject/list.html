@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <title>Subject</title>
+</head>
+<body>
+    <h2>Choose your subject</h2>
+    <table>
+         <tr th:each="subject:${subjects}">
+             <td>
+                 <a th:href="@{'/subject/view/'+${subject.id}}" th:text="${subject.title}"></a>
+             </td>
+         </tr>
+    </table>
+
+
+    <a href="/add">Adding Subject</a>
+
+</body>
+</html>
